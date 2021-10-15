@@ -6,25 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hearts Counter</title>
   </head>
+
+  <style>
+    body {
+      margin: 2rem 4rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  </style>
   <body>
+    <h1>Calculate Total Score</h1>
     <form id="form">
       <textarea id="scores" id="scores" cols="50" rows="10"></textarea>
 
-      <button>Count!</button>
+      <div>
+        <button id="count-btn">Count!</button>
+        <button type="reset">Reset</button>
+      </div>
+
+      <p>Total Score: <span id="score-display"></span></p>
     </form>
 
     <script type="module">
       import { countScore } from "./countScore.js"
       const textarea = document.querySelector("#scores")
       const form = document.querySelector("#form")
+      const scoreDisplay = document.querySelector("#score-display")
+
+      scoreDisplay.textContent = "-"
 
       function handleSubmit(event) {
         event.preventDefault()
-
-        countScore(textarea.value)
+        scoreDisplay.textContent = countScore(textarea.value)
       }
 
       form.addEventListener("submit", handleSubmit)
+      form.addEventListener("reset", () => (scoreDisplay.textContent = "-"))
     </script>
   </body>
 </html>
