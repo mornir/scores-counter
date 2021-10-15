@@ -1,0 +1,19 @@
+{
+  "name": "hearts-counter",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^27.2.5"
+  },
+  "jest": {
+    "transform": {}
+  }
+}
